@@ -11,18 +11,10 @@ const HeaderWithIcon = (props: HeaderWithIconProps) => {
   return (
     <>
       <div>
-        <Icon
-          loading
-          circular
-          inverted
-          size="big"
-          color="teal"
-          name="search"
-          className="mt-2"
-        />
+        <Icon circular inverted size="big" color="teal" name="search" />
       </div>
 
-      <Header as={props.as} icon className="my-2">
+      <Header as={props.as} icon>
         {props.headerText}
         <Header.Subheader>{props.subheaderText}</Header.Subheader>
       </Header>
@@ -32,8 +24,8 @@ const HeaderWithIcon = (props: HeaderWithIconProps) => {
 
 HeaderWithIcon.defaultProps = {
   as: "h2",
-  headerText: "Header Text",
-  subheaderText: "Subheader Text",
+  // headerText: "Header Text",
+  // subheaderText: "Subheader Text",
 };
 
 export default HeaderWithIcon;

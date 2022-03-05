@@ -1,19 +1,19 @@
 import React from "react";
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import HeaderWithIcon from "./components/HeaderWithIcon";
-import { Divider } from "semantic-ui-react";
+import LandingPage from "./components/LandingPage";
+import SearchImage from "./components/SearchImage";
+import SearchVideo from "./components/SearchVideo";
 
 const App = () => {
   return (
     <div className="App">
-      <header className="text-center">
-        <HeaderWithIcon
-          as={"h2"}
-          headerText={"Images or Video Search"}
-          subheaderText={"Searches form Unsplash and YouTube API"}
-        />
-      </header>
-      <Divider />
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/images" element={<SearchImage />} />
+        <Route path="/videos" element={<SearchVideo />} />
+        <Route path="/*" element={<div>NOT FOUND</div>} />
+      </Routes>
     </div>
   );
 };
