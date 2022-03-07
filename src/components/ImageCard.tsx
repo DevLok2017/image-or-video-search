@@ -1,3 +1,4 @@
+import moment from "moment";
 import React from "react";
 import { Card, Icon, Image } from "semantic-ui-react";
 
@@ -23,7 +24,9 @@ const ImageCard = (props: any) => {
             </a>
           </Card.Header>
           <Card.Meta>
-            <span className="date">On: {image.created_at}</span>
+            <span className="date">
+              {moment(image.created_at, moment.HTML5_FMT.DATETIME_LOCAL).format("dddd, MMMM Do YYYY, h:mm:ss a")}
+            </span>
           </Card.Meta>
           <Card.Description>
             {image.description || image.alt_description}

@@ -66,20 +66,25 @@ export const NavigationButtons = (props: NavigationButtonsProps) => {
   let navigate = useNavigate();
 
   return (
-    <div style={{ position: "absolute", top: 10, right: 10 }}>
-      <Button
-        content={props.btnName}
-        floated="right"
-        onClick={() => navigate(props.navigateTo)}
-      />
+    <div
+      style={{
+        position: "relative",
+        top: 10,
+        right: 10,
+        verticalAlign: "middle",
+      }}
+    >
       <Button
         basic
         content="Home"
         icon="home"
         labelPosition="left"
         color="teal"
-        floated="right"
         onClick={() => navigate("/")}
+      />
+      <Button
+        content={props.btnName}
+        onClick={() => navigate(props.navigateTo)}
       />
     </div>
   );
